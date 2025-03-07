@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>videojuegos Favoritos</title>
+    <title>Videojuegos Favoritos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,43 +18,52 @@
         }
         .game img {
             width: 200px;
-            height: 300px;
-            border-radius: 10px;
+            height: 200px;
+            border-radius: 15px;
+            transition: transform 0.3s;
         }
-        .description {
+        .game img:hover {
+            transform: scale(1.1);
+        }
+        .game p {
             display: none;
-            max-width: 300px;
-            margin: 10px auto;
+            font-size: 14px;
+            margin-top: 10px;
         }
     </style>
+    <script>
+        function toggleDescription(id) {
+            let desc = document.getElementById(id);
+            if (desc.style.display === "none" || desc.style.display === "") {
+                desc.style.display = "block";
+            } else {
+                desc.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>Mis Videojuegos Favoritos</h1>
-    <div class="game" onclick="toggleDescription('warzone')">
+    <div class="game" onclick="toggleDescription('desc1')">
         <img src="https://xxboxnews.blob.core.windows.net/prod/sites/4/CODWZ_S1-X1_-1920x1080-enUS_JPG-7bfcc41943e5c8cfdb37-d86e258b3fb5ce954692.jpg" alt="Warzone">
-        <p id="warzone" class="description">Warzone es un battle royale gratuito de Call of Duty con intensos combates multijugador.</p>
+        <p id="desc1">Warzone: Un battle royale lleno de acción y estrategia.</p>
     </div>
-    <div class="game" onclick="toggleDescription('minecraft')">
+    <div class="game" onclick="toggleDescription('desc2')">
         <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Homepage_Discover-our-games_MC-Vanilla-KeyArt_864x864.jpg" alt="Minecraft">
-        <p id="minecraft" class="description">Minecraft es un juego de construcción y supervivencia en un mundo de bloques infinito.</p>
+        <p id="desc2">Minecraft: Un mundo de creatividad e infinitas posibilidades.</p>
     </div>
-    <div class="game" onclick="toggleDescription('gta')">
+    <div class="game" onclick="toggleDescription('desc3')">
         <img src="https://media.vandal.net/m/3150/200472123346_1.jpg" alt="GTA San Andreas">
-        <p id="gta" class="description">GTA San Andreas sigue la historia de CJ en un mundo  abierto  lleno de acción y crimen.</p>
+        <p id="desc3">GTA San Andreas: Un clásico de mundo abierto con una gran historia.</p>
     </div>
-    <div class="game" onclick="toggleDescription('nfs')">
-        <img src="https://static.wikia.nocookie.net/nfs/images/7/76/NFSMW_Boxart.jpg/revision/latest?cb=20200127230308&path-prefix=es" alt="Need for Speed Most Wanted">
-        <p id="nfs" class="description">Need for Speed Most Wanted es un juego de carreras de mundo abierto con persecuciones policiales.</p>
+    <div class="game" onclick="toggleDescription('desc4')">
+        <img src="https://i.3djuegos.com/juegos/1065/need_for_speed_most_wanted/fotos/ficha/need_for_speed_most_wanted-1680610.jpg" alt="Need for Speed Most Wanted">
+        <p id="desc4">Need for Speed Most Wanted: Carreras intensas y persecuciones policiales épicas.</p>
     </div>
-    <div class="game" onclick="toggleDescription('gow')">
+    <div class="game" onclick="toggleDescription('desc5')">
         <img src="https://m.media-amazon.com/images/M/MV5BYjg2NDViMjYtYmI1My00NzlkLTk4OWEtMjk0MWU3ZTM2Yzk3XkEyXkFqcGc@._V1_.jpg" alt="God of War">
-        <p id="gow" class="description">God of War sigue la historia de Kratos en su viaje mitológico de venganza y  redención.</p>
+        <p id="desc5">God of War: Una aventura mitológica con combates espectaculares.</p>
     </div>
-    <script>
-        function toggleDescription(id) {
-            let element = document.getElementById(id);
-            element.style.display = (element.style.display === "none" || element.style.display === "") ? "block" : "none";
-        }
-    </script>
 </body>
 </html>
+
