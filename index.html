@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojuegos Favoritos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #222;
+            color: white;
+        }
+        .game {
+            margin: 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .game img {
+            width: 200px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .description {
+            display: none;
+            max-width: 300px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mis Videojuegos Favoritos</h1>
+    <div class="game" onclick="toggleDescription('warzone')">
+        <img src="warzone.jpg" alt="Warzone">
+        <p id="warzone" class="description">Warzone es un battle royale gratuito de Call of Duty con intensos combates multijugador.</p>
+    </div>
+    <div class="game" onclick="toggleDescription('minecraft')">
+        <img src="minecraft.jpg" alt="Minecraft">
+        <p id="minecraft" class="description">Minecraft es un juego de construcción y supervivencia en un mundo de bloques infinito.</p>
+    </div>
+    <div class="game" onclick="toggleDescription('gta')">
+        <img src="gta.jpg" alt="GTA San Andreas">
+        <p id="gta" class="description">GTA San Andreas sigue la historia de CJ en un mundo abierto lleno de acción y crimen.</p>
+    </div>
+    <div class="game" onclick="toggleDescription('nfs')">
+        <img src="nfs.jpg" alt="Need for Speed Most Wanted">
+        <p id="nfs" class="description">Need for Speed Most Wanted es un juego de carreras de mundo abierto con persecuciones policiales.</p>
+    </div>
+    <div class="game" onclick="toggleDescription('gow')">
+        <img src="gow.jpg" alt="God of War">
+        <p id="gow" class="description">God of War sigue la historia de Kratos en su viaje mitológico de venganza y redención.</p>
+    </div>
+    <script>
+        function toggleDescription(id) {
+            let element = document.getElementById(id);
+            element.style.display = (element.style.display === "none" || element.style.display === "") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
